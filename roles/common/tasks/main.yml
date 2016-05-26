@@ -1,0 +1,29 @@
+---
+  - include: CentOS6-repos.yml
+    tags: yum
+    when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
+
+  - include: CentOS7-repos.yml
+    tags: yum
+    when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+
+  - name: Install custom packages
+    tags: yum
+    yum: name={{ item }} state=installed
+    with_items:
+        - ntp
+        - vim
+        - atop
+        - unzip
+        - screen
+        - tmux
+        - htop
+        - gzip
+
+  - name: Add admins ssh keys
+    authorized_key: user=root key="{{ item }}"
+    with_items:  "{{ admins_keys }}"
+
+  - name: Revoke admins ssh keys
+    authorized_key: user=root key="{{ item }}" state=absent
+    with_items:  "{{ revoke_keys }}"
