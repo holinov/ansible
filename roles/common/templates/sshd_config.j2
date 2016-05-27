@@ -16,6 +16,6 @@ AcceptEnv XMODIFIERS
 Subsystem	sftp	/usr/libexec/openssh/sftp-server
 {% if ssh_options %}
 {% for option in ssh_options %}
-{ ssh_option }
+{{ option }}
 {% endfor %}
 {% endif %}
