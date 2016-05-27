@@ -44,3 +44,9 @@
   notify:
     - Restart server
     - Wait for server to restart
+
+- name: If selinud enable
+  notify:
+    - Restart server
+    - Wait for server to restart
+  when: ansible_selinux.mode == "permissive"
