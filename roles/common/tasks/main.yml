@@ -12,10 +12,6 @@
   yum: name={{ item }} state=installed
   with_items: "{{ def_pkgs }}"
 
-- name: Diasble selinux policy
-  tags: selinux
-  selinux: state=disabled
-
 - name: Add admins ssh keys
   tags: keys
   authorized_key: user=root key="{{ item }}"

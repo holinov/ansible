@@ -10,7 +10,7 @@
     - " 1.centos.pool.ntp.org"
     - " 2.centos.pool.ntp.org"
     - " 3.centos.pool.ntp.org"
-  ssh_pass_auth: no
+  ssh_pass_auth: "no"
   ssh_port: 22
   ssh_options:
   def_pkgs:
