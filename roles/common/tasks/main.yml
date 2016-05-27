@@ -30,7 +30,7 @@
   authorized_key: user=root key="{{ item }}" state=absent
   with_items:  "{{ revoke_keys }}"
 
-- name: Update root passwd:
+- name: Update root passwd
   tags: passwd
   user: name=root password="{{ root_passwd }}" update_password=always
 
