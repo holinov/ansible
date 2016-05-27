@@ -12,6 +12,7 @@
   ssh_pass_auth: "no"
   ssh_port: 22
   ssh_options:
+    - ""
   def_pkgs:
       - ntp
       - vim
