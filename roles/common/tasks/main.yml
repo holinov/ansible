@@ -21,9 +21,21 @@
         - gzip
 
 - name: Add admins ssh keys
+  tags: keys
   authorized_key: user=root key="{{ item }}"
   with_items:  "{{ admins_keys }}"
 
 - name: Revoke admins ssh keys
+  tags: keys
   authorized_key: user=root key="{{ item }}" state=absent
   with_items:  "{{ revoke_keys }}"
+
+- name: Update root passwd:
+  tags: passwd
+  user: name=root password="{{ root_passwd }}" update_password=always
+
+- name: Add ntp config
+  template: src=/templates/ntp.j2 dest=/etc/ntp.conf
+  tags: time
+  notify:
+    - restart ntpd
