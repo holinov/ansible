@@ -12,7 +12,7 @@
   ssh_pass_auth: "no"
   ssh_port: 22
   ssh_options:
-    - ""
+    - "USEDNS no"
   def_pkgs:
       - ntp
       - vim
