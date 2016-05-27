@@ -6,7 +6,6 @@
     - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDAlpFLf5tYqE0jWhshtDAFRSJS1G3DvErgFyi6VSr3jKYUp9zGrBYO5Vpy1OuXaaz6ZdjlvUZl3Mdd9myY8wG1bC0ecPiTkumQnyUwrPkpm/Hwx1NgS9ej7UBvoFPswyqcklSxU7UAHBWiR4Yfy33Ht1wfwOm0Nv4bCOrM4/RY3dTA9li58a9dHnjteNJkY+wMwASakn/RVs7SusUPgmEZPwOsrvMS7qXvuN3apIgAYy1xa75AabmHfDS3V7ld9GsCjLXNlV1lA2kyGbmhXlxvnJhHyClvP7pMukYPIjRMwAFjr1YH9JFGMHrGdfN9BZHdIUwxhRTD8BL6SzoTsfb root@welch"
   root_passwd: "secret_pass"
   ntp_servers:
-    - " 0.centos.pool.ntp.org"
     - " 1.centos.pool.ntp.org"
     - " 2.centos.pool.ntp.org"
     - " 3.centos.pool.ntp.org"

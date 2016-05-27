@@ -2,7 +2,6 @@
   admins_keys:
     - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD8Ls9Y9sG8Ujk0idHLViBDZWVAmQx/MJJVQ1ji4z0OMucQFlmBM5DQc+CD3ffivfWLNLWR/FdTMAz8L8s4pVBw0Zl9e66mEeWo9uUeyCY8Ia0tm0TPaLlzZJ4O7PBPxf5TUe0PZfdDFFn4IKH1a6Pzca50H2dhs8+eV6Y1G9E77FxKh2iK0PLqth1Wqgxor9oUGxTOlYTjWjBpjubF3eBggPFev1Icfb7QiDAIreaHIA1OxBLlbIvqGtPO0PGcRiwUfoI+yGlRcg70SX5U2ITe+LnkJvYPjBgbJwM1ZvZkJSiW7ryvosZZzy60C2PO4jtw+XbF2+Q3BDrAkRcGxyW9 vrenskiy@MacBook-Air-Vladimir.local"
   ntp_servers:
-    - "ntp1.vniiftri.ru"
     - "ntp2.vniiftri.ru"
     - "ntp3.vniiftri.ru"
     - "ntp4.vniiftri.ru"
