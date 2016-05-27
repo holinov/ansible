@@ -44,9 +44,3 @@
   notify:
     - Restart server
     - Wait for server to restart
-
-- name: rebot selinud enable
-  when: ansible_selinux.mode == "permissive"
-  notify:
-    - Restart server
-    - Wait for server to restart
