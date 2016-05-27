@@ -10,16 +10,8 @@
 - name: Install custom packages
   tags: yum
   yum: name={{ item }} state=installed
-  with_items:
-        - ntp
-        - vim
-        - atop
-        - unzip
-        - screen
-        - tmux
-        - htop
-        - gzip
-
+  with_items: "{{ def_pkgs }}"
+      
 - name: Add admins ssh keys
   tags: keys
   authorized_key: user=root key="{{ item }}"
