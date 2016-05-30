@@ -43,5 +43,5 @@
     - domain: "*"
       limit_type: "-"
       limit_item: "nproc"
-      value: ":32768"
+      value: "32768"
       dest: "/etc/security/limits.d/90-nproc.conf"
