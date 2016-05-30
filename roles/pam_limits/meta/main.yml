@@ -7,4 +7,5 @@
          limit_item={{ item.limit_item }}
          value={{ item.value }}
          dest={{ item.dest | default("/etc/security/limits.conf") }}
-    with_items: "{{ pam_limits_params }}"
+    with_items:
+      - "{{ pam_limits_params }}"
