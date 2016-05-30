@@ -1,6 +1,10 @@
 ---
   - name: Add pam limits params
     tags: pam_limits
-    pam_limits: domain={{ pam_limits_params.domain | default("*") }} limit_type={{ pam_limits_params.limit_type }} limit_item={{ pam_limits_params.limit_item }}, value={{ pam_limits_params.value }} dest={{ pam_limits_params.dest | default("/etc/security/limits.conf") }}
+    pam_limits:>
+         domain={{ item.domain | default("*") }}
+         limit_type={{ item.limit_type }}
+         limit_item={{ item.limit_item }}
+         value={{ item.value }}
+         dest={{ item.dest | default("/etc/security/limits.conf") }}
     with_items: "{{ pam_limits_params }}"
-    
