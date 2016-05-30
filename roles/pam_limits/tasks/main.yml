@@ -1,7 +1,7 @@
 ---
   - name: Add pam limits params
     tags: pam_limits
-    pam_limits:>
+    pam_limits: >
          domain={{ item.domain | default("*") }}
          limit_type={{ item.limit_type }}
          limit_item={{ item.limit_item }}
