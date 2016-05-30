@@ -1,0 +1,24 @@
+/etc/sysctl.conf
+  net.ipv4.conf.all.rp_filter=1
+  net.ipv4.icmp_echo_ignore_broadcasts=1
+  kernel.panic=1
+  vm.zone_reclaim_mode=0
+  vm.max_map_count=131072
+  vm.swappiness=1
+
+=>
+
+sysctl -p
+
+=>
+
+/etc/security/limits.conf
+  * - memlock unlimited
+  * - nofile 1000000
+  * - nproc 32768
+  * - as unlimited
+
+=>
+
+/etc/security/limits.d/90-nproc.conf
+ add = * - nproc 32768

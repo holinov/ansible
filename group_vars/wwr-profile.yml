@@ -1,0 +1,16 @@
+---
+  sysctl_params:
+    - { name:"net.ipv4.conf.all.rp_filter", value:"1" }
+    - { name:"net.ipv4.icmp_echo_ignore_broadcasts", value:"1" }
+    - { name:"kernel.panic", value:"1" }
+    - { name:"vm.zone_reclaim_mode", value:"0" }
+    - { name:"vm.max_map_count", value:"131072" }
+    - { name:"vm.swappiness", value:"1"}
+
+  pam_limits_params:
+    - { domain:"*", limit_type:"-", limit_item:"memlock", value:"unlimited" }
+    - { domain:"*", limit_type:"-", limit_item:"nofile", value:"1000000" }
+    - { domain:"*", limit_type:"-", limit_item:"nproc", value:"32768" }
+    - { domain:"*", limit_type:"-", limit_item:"as", value:"unlimited" }
+
+  
