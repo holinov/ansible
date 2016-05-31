@@ -1,0 +1,5 @@
+---
+  - name: Install server pkgs
+    tags: [yum, freeipa-server]
+    yum: name="ipa-serever" state=installed
+    when: ipa-role == "server"
