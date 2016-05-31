@@ -1,7 +1,7 @@
 ---
-  - name: Sysctel rules
+  - name: Sysctl rules
     tags: sysctl
     sysctl: name={{ item.name }} value={{ item.value }} sysctl_set=yes state=present reload=yes
     with_items:
       - "{{ sysctl_params }}"
-    when: sysctl_params is defined
+    when: item is defined
