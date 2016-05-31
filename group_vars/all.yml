@@ -24,4 +24,4 @@
       - gzip
       - zsh
 
-  ipa-role: "client"
+  ipa_role: "client"

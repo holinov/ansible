@@ -2,5 +2,5 @@
   - name: Install server pkgs
     tags: [yum, freeipa-server]
     yum: name="ipa-serever" state=installed
-    with_items: "{{ ipa-role }}"
+    with_items: "{{ ipa_role }}"
     when: item == "server"
