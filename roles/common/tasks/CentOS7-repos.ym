@@ -1,8 +1,0 @@
----
-  - name: Add epel repo
-    tags: yum
-    yum: name=epel-release state=installed
-
-  - name: Add rpmforge repo
-    tags: yum
-    yum: name=http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm state=present
