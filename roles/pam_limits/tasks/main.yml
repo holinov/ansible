@@ -9,4 +9,4 @@
          dest={{ item.dest | default("/etc/security/limits.conf") }}
     with_items:
       - "{{ pam_limits_params }}"
-    when: "{{ pam_limits_params }}" is defined
+    when: "{{ pam_limits_params }} is defined"
