@@ -3,3 +3,6 @@
 
 [wwr-profile]
 10.0.0.44
+
+[freeipa-server]
+10.0.0.50
