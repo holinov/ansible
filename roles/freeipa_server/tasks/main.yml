@@ -1,5 +1,10 @@
 ---
   - name: Install server pkgs
     tags: [yum, freeipa-server]
-    yum: name=ipa-server state=installed
+    yum: name={{ item }} state=installed
+    with_items:
+      - ipa-server
+      - ipa-server-dns
+      - bind
+      - bind-dyndb-ldap    
     when: ipa_role == "server"
