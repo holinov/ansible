@@ -1,12 +1,12 @@
 ---
 
   - name: Check java
-    shell: rpm -qa | grep -e  "java" -e "jdk"
+    command: rpm -qa | grep -e  "java" -e "jdk"
     register: java_status
 
   - name: Download java rpm
     tags: java
-    shell: >
+    command: >
       wget --no-cookies --no-check-certificate \
        --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; \
        oraclelicense=accept-securebackup-cookie" "{{ java_url }}" \
@@ -17,5 +17,5 @@
 
   - name: Java install
     tags: [java, install]
-    shell: rpm -U /tmp/java.rpm ; rm -f /tmp/java
+    command: rpm -U /tmp/java.rpm ; rm -f /tmp/java
     when: java_download.rc == "0"
