@@ -6,4 +6,5 @@
      dest=/etc/sysconfig/iptables
      owner=root
      mode=0644
-  
+    notify:
+      - restart iptables

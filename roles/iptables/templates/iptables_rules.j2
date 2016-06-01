@@ -6,13 +6,14 @@
 -A INPUT -i lo -j ACCEPT
 -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 {% for host in groups[group_name] %}
-  {{ hostvars[host]['ansible_default_ipv4']['address'] }}
+-A INPUT -s {{ hostvars[host]['ansible_default_ipv4']['address'] }} -j ACCEPT
 {% endfor %}
 {% for host in groups['adm-servers'] %}
-  {{ hostvars[host]['ansible_default_ipv4']['address'] }}
+-A INPUT -s {{ hostvars[host]['ansible_default_ipv4']['address'] }} -j ACCEPT
 {% endfor %}
 {% for ip in office_ips %}
 -A INPUT -s {{ ip }} -j ACCEPT
 {% endfor %}
+-A INPUT -p tcp -m multiport --dports 80,443 -j ACCEPT
 -A INPUT -j REJECT --reject-with icmp-port-unreachable
 COMMIT
