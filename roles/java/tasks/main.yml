@@ -9,10 +9,10 @@
   - name: Download java rpm
     tags: java
     command: >
-      wget --no-cookies --no-check-certificate \
+      'wget --no-cookies --no-check-certificate \
        --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; \
        oraclelicense=accept-securebackup-cookie" "{{ java_url }}" \
-       -O /tmp/java.rpm
+       -O /tmp/java.rpm'
     when: java_status.stdout.find('jdk') == -1 and java_url is defined
 
     register: java_download
