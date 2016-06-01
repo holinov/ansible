@@ -1,4 +1,7 @@
 ---
+
+  group_name: "wwr-profile"
+
   sysctl_params:
     - name: "net.ipv4.conf.all.rp_filter"
       value: "1"
@@ -43,5 +46,3 @@
       user: "centos"
       job: "echo `date` >> ~/file"
       state: "absent"
-
-  group_name: "wwr-profile"
