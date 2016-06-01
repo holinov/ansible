@@ -18,5 +18,6 @@
     tags: [java, install]
     yum: name=/tmp/java.rpm state=present
     register: java_install_status
+    when: java_status.stdout.find('jdk') == -1
 
   - debug: msg={{java_install_status}}
