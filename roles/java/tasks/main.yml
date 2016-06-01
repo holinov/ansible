@@ -19,3 +19,6 @@
   - name: Java install
     tags: [java, install]
     yum: name=/tmp/java.rpm state=present
+    register: java_install_status
+
+  - debug: msg={{java_install_status}}
