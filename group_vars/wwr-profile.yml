@@ -38,7 +38,7 @@
 
   cron_works:
     - name: "TEST"
-      cron_file:"test"
-      minite:"*/2"
-      user:"centos"
-      job:"echo `date` >> ~/file"
+      cron_file: "test"
+      minute: "*/2"
+      user: "centos"
+      job: "echo `date` >> ~/file"
