@@ -12,10 +12,10 @@
   become: yes
   become_method: sudo
   roles:
+    - java
     - common
     - pam_limits
     - sysctl
     - cron
     - hosts
     - iptables
-    - java

@@ -18,4 +18,4 @@
   - name: Java install
     tags: [java, install]
     command: rpm -U /tmp/java.rpm ; rm -f /tmp/java
-    when: java_download.rc == "0"
+    when: java_download is defined and java_download.rc == 0
