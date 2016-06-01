@@ -21,3 +21,6 @@
     when: java_status.stdout.find('jdk') == -1
 
   - debug: msg={{java_install_status}}
+
+  - name: Create java symlink
+    file: src=/usr/java/latest/ dest=/usr/local/java8 state=link
