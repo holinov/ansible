@@ -8,6 +8,9 @@
 {% for host in groups[group_name] %}
   {{ hostvars[host]['ansible_default_ipv4']['address'] }}
 {% endfor %}
+{% for host in groups['adm-servers'] %}
+  {{ hostvars[host]['ansible_default_ipv4']['address'] }}
+{% endfor %}
 {% for ip in office_ips %}
 -A INPUT -s {{ ip }} -j ACCEPT
 {% endfor %}
