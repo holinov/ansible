@@ -18,3 +18,4 @@
     - cron
     - hosts
     - iptables
+    - java
