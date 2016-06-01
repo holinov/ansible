@@ -4,6 +4,8 @@
     command: rpm -qa | grep -e  "java" -e "jdk"
     register: java_status
 
+  - debug: msg="{{ java_status }}"
+
   - name: Download java rpm
     tags: java
     command: >
