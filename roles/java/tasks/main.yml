@@ -13,10 +13,11 @@
       dest="/tmp/java.rpm"
       headers="Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie"
     when: java_status.stdout.find('jdk') == -1 and java_url is defined
-
     register: java_download
+
+  - debug: msg="{{ java_download }}"
 
   - name: Java install
     tags: [java, install]
-    command: rpm -U /tmp/java.rpm ; rm -f /tmp/java
+    yum: name=/tmp/java.rpm state=present
     when: java_download is defined and java_download.rc == 0
