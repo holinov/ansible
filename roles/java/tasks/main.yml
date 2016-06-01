@@ -2,7 +2,7 @@
 
   - name: Check java
     shell: rpm -qa | grep -e  "java" -e "jdk"
-    regirter: java_status
+    register: java_status
 
   - name: Download java rpm
     tags: java
