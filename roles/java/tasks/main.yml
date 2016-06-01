@@ -1,7 +1,7 @@
 ---
 
   - name: Check java
-    command: 'rpm -ql'
+    command: 'rpm -qa'
     register: java_status
 
   - debug: msg="{{ java_status.stdout.find('jdk') }}"
