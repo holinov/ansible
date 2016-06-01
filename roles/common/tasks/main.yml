@@ -44,3 +44,9 @@
   notify:
     - Restart server
     - Wait for server to restart
+
+
+
+- name: Add resolv.conf
+  tags: [dns, common]
+  copy: src=resolv.conf dest=/etc/resolv.conf owner=root group=root mode=0644
