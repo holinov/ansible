@@ -3,7 +3,7 @@
     tags: [cron]
     cron: >
      name={{ item.name }}
-     cron_file={{ item.file | default("/etc/crontab") }}
+     cron_file={{ item.cron_file | default("crontab") }}
      minute={{ item.minute | default("*") }}
      hour={{ item.hour | default("*") }}
      day={{ item.day | default("*") }}
