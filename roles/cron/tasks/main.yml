@@ -4,11 +4,11 @@
     cron: >
      name={{ item.name }}
      cron_file={{ item.file | default(/etc/crontab) }}
-     minute={{ item.minute | default(*) }}
-     hour={{ item.hour | default(*) }}
-     day={{ item.day | default(*) }}
-     mouth={{ item.mouth | default(*) }}
-     weekday={{ item.weekday | default(*) }}
+     minute={{ item.minute | default("*") }}
+     hour={{ item.hour | default("*") }}
+     day={{ item.day | default("*") }}
+     mouth={{ item.mouth | default("*") }}
+     weekday={{ item.weekday | default("*") }}
      user={{ item.user | default(root) }}
      state={{ item.state | default(present) }}
      job={{ item.job}}
