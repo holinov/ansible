@@ -14,4 +14,3 @@
      job={{ item.job}}
     with_items:
       - "{{ cron_works }}"
-    when: itme.job is defined
