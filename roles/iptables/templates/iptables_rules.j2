@@ -6,10 +6,10 @@
 -A INPUT -i lo -j ACCEPT
 -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 {% for host in groups[group_name] %}
--A INPUT -s {{ hostvars[host]['ansible_default_ipv4']['address']/32 }} -j ACCEPT
+-A INPUT -s {{ hostvars[host]['ansible_default_ipv4']['address'] }}/32 -j ACCEPT
 {% endfor %}
 {% for host in groups['adm-servers'] %}
--A INPUT -s {{ hostvars[host]['ansible_default_ipv4']['address']/32 }} -j ACCEPT
+-A INPUT -s {{ hostvars[host]['ansible_default_ipv4']['address'] }}/32 -j ACCEPT
 {% endfor %}
 {% for ip in office_ips %}
 -A INPUT -s {{ ip }}/32 -j ACCEPT
