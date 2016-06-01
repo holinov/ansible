@@ -7,7 +7,7 @@
      minute={{ item.minute | default("*") }}
      hour={{ item.hour | default("*") }}
      day={{ item.day | default("*") }}
-     mouth={{ item.mouth | default("*") }}
+     month={{ item.month | default("*") }}
      weekday={{ item.weekday | default("*") }}
      user={{ item.user | default("root") }}
      state={{ item.state | default("present") }}
