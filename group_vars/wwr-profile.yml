@@ -42,3 +42,4 @@
       minute: "*/2"
       user: "centos"
       job: "echo `date` >> ~/file"
+      state: "absent"
