@@ -1,4 +1,9 @@
 ---
+
+- name: Add resolv.conf
+  tags: [dns, common]
+  copy: src=resolv.conf dest=/etc/resolv.conf owner=root group=root mode=0644
+
 - include: CentOS6-repos.yml
   tags: yum
   when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
@@ -44,9 +49,3 @@
   notify:
     - Restart server
     - Wait for server to restart
-
-
-
-- name: Add resolv.conf
-  tags: [dns, common]
-  copy: src=resolv.conf dest=/etc/resolv.conf owner=root group=root mode=0644
