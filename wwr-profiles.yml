@@ -1,0 +1,12 @@
+---
+- name: apply common configuration
+  hosts:
+    - wwr-profile
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  roles:
+    - common
+    - pam_limits
+    - sysctl
+    - cron
