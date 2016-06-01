@@ -43,3 +43,5 @@
       user: "centos"
       job: "echo `date` >> ~/file"
       state: "absent"
+
+  group_name: "wwr-profile"
