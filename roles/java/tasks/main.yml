@@ -1,4 +1,5 @@
 ---
+
   - name: Check java
     shell: rpm -qa | grep -e  "java" -e "jdk"
     regirter: java_status
