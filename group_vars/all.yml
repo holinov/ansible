@@ -23,5 +23,6 @@
       - htop
       - gzip
       - zsh
+      - telnet
 
   ipa_role: "client"
