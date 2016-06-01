@@ -5,8 +5,8 @@
 -A INPUT -p icmp -j ACCEPT
 -A INPUT -i lo -j ACCEPT
 -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-{% for host in groups['wwr-profile'] %}
--A INPUT -s {% hostvars[host][ansible_default_ipv4][address] %} -j ACCEPT
+{% for host in groups['{{group_name}}','adm_servers'] %}
+-A INPUT -s {{ hostvars[host][ansible_default_ipv4][address] }} -j ACCEPT
 {% endfor %}
 {% for ip in office_ips %}
 -A INPUT -s {% ip %} -j ACCEPT
