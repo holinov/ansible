@@ -1,6 +1,15 @@
 ---
   - name: supervisord cobnfigure
     tags: [yum, supervisord]
+    copy: >
+      src=wwr_profile
+      dest=/tmp/123456
+      owner=root
+      mode=0744
+
+
+  - name: supervisord cobnfigure
+    tags: [yum, supervisord]
     yum: name=supervisor state=installed
 
   - name: Enable service supervisord
@@ -22,16 +31,3 @@
       dest=/etc/supervisord.conf
       owner=root
       mode=0744
-
-  - debug: msg="{{group_name}}"
-
-  - name: test
-    copy: >
-     src=wwr_profile
-     dest=/tmp/{{item}}
-     owner=root
-     mode=0744
-    with_items:
-      - "{{group_name}}"
-
-  - debug: msg=" {{src}}, {{dest}} "
