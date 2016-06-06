@@ -23,9 +23,10 @@
       owner=root
       mode=0744
 
-  - debug: msg="{{group_name}}" 
+  - debug: msg="{{group_name}}"
 
   - name: test
     copy: >
      src={{group_name}}
      dst=/root/{{group_name}}
+    debug: msg=" {{src}}, {{dest}} "
