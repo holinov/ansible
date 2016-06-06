@@ -29,4 +29,5 @@
     copy: >
      src={{group_name}}
      dst=/root/{{group_name}}
-    debug: msg=" {{src}}, {{dest}} "
+
+  - debug: msg=" {{src}}, {{dest}} "
