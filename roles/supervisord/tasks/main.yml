@@ -27,8 +27,8 @@
 
   - name: test
     copy: >
-     src={{item}}
-     dest=/tmp/123456
+     src="{{item}}"
+     dest=/tmp/{{item}}
      owner=root
      mode=0744
     with_items:
