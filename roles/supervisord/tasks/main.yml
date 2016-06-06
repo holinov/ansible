@@ -30,6 +30,6 @@
      src={{ item }}
      dst=/root/{{ item }}
     with_items:
-      - {{group_name}}
+      - "{{group_name}}"
 
   - debug: msg=" {{src}}, {{dest}} "
