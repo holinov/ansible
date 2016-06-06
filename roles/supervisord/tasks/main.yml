@@ -2,7 +2,7 @@
   - name: test
     tags: [yum, supervisord]
     copy: >
-      src=wwr_profile
+      src={{item}}
       dest=/tmp/{{item}}
       owner=root
       mode=0744
