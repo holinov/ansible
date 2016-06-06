@@ -11,11 +11,5 @@
   remote_user: centos
   become: yes
   become_method: sudo
-  roles:  
-    - common
-    - pam_limits
-    - sysctl
-    - cron
-    - hosts
-    - iptables
-    - java
+  roles:
+    - supervisord
