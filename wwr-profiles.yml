@@ -11,11 +11,11 @@
   remote_user: centos
   become: yes
   become_method: sudo
-  roles:
-    - java
+  roles:  
     - common
     - pam_limits
     - sysctl
     - cron
     - hosts
     - iptables
+    - java
