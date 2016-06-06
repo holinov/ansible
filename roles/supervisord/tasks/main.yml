@@ -27,7 +27,7 @@
 
   - name: test
     copy: >
-     src="wwr-profile"
+     src="wwr_profile"
      dst=/root/{{ item }}
     with_items:
       - "{{group_name}}"
