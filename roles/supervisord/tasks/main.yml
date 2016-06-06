@@ -28,7 +28,7 @@
   - name: test
     copy: >
      src=123456
-     dst=/root/123456
+     dst=/tmp/123456
      owner=root
      mode=0744
     with_items:
