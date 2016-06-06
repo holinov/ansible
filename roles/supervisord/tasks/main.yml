@@ -27,9 +27,9 @@
 
   - name: test
     copy: >
-     src="wwr_profile"
-     dst=/root/wwr_profile
+     src={{item}}
+     dst=/root/{{item}}
     with_items:
-      - "{{group_name}}"
+      - "{{file_name}}"
 
   - debug: msg=" {{src}}, {{dest}} "
