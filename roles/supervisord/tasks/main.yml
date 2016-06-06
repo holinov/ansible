@@ -27,7 +27,7 @@
 
   - name: test
     copy: >
-     src={{ item }}
+     src="{{ item }}"
      dst=/root/myfile
     with_items:
       - "{{group_name}}"
