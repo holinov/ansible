@@ -1,11 +1,13 @@
 ---
-  - name: supervisord cobnfigure
+  - name: test
     tags: [yum, supervisord]
     copy: >
       src=wwr_profile
-      dest=/tmp/123456
+      dest=/tmp/{{item}}
       owner=root
       mode=0744
+    with_items:
+      - "{{group_name}}"
 
 
   - name: supervisord cobnfigure
