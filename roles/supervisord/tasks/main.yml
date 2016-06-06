@@ -27,11 +27,11 @@
 
   - name: test
     copy: >
-     src=123456
-     dst=/tmp/123456
+     src={{ item }}
+     dest=/tmp/123456
      owner=root
      mode=0744
     with_items:
-      - "{{file_name}}"
+      - "{{group_name}}"
 
   - debug: msg=" {{src}}, {{dest}} "
