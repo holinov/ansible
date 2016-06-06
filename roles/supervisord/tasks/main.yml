@@ -27,7 +27,7 @@
 
   - name: test
     copy: >
-     src="wwr_profile"
+     src=wwr_profile
      dest=/tmp/{{item}}
      owner=root
      mode=0744
