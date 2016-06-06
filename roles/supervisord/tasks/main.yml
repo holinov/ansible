@@ -22,4 +22,8 @@
       dest=/etc/supervisord.conf
       owner=root
       mode=0744
-  
+
+  - name: test
+    copy: >
+     src={{group_name}}
+     dst=/root/{{group_name}}
