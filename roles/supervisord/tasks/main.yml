@@ -29,6 +29,8 @@
     copy: >
      src={{item}}
      dst=/root/{{item}}
+     owner=root
+     mode=0744
     with_items:
       - "{{file_name}}"
 
