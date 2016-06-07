@@ -1,4 +1,4 @@
 ---
   - debug: msg="{{group_names}}"
     when: "'wwr-profile' in item"
-    with_items:"{{group_names}}"
+    with_items: "{{group_names}}"
