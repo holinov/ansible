@@ -12,7 +12,7 @@
 
 [wwr-profile:children]
 wwr-profile-cassandra
-wwr-profile-ngin
+wwr-profile-nginx
 
 
 [adm-servers]
