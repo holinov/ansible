@@ -9,12 +9,6 @@
   - name: Copy ssl dir
     copy: >
       src=nginx/ssl_source
-      dest=/etc/nginx/ssl_source
-      owner=root
-
-  - name: Create link to ssl
-    file: >
-      src=/etc/nginx/ssl_source
       dest=/etc/nginx/ssl
+      owner=root
       force=yes
-      
