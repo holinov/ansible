@@ -8,7 +8,7 @@
 
   - name: Copy ssl dir
     copy: >
-      src=nginx/ssl_source
+      src=nginx/ssl_source/
       dest=/etc/nginx/ssl
       owner=root
       force=yes
