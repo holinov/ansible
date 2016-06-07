@@ -1,2 +1,3 @@
 ---
   - debug: msg="{{group_names}}"
+    when: "'wwr-profile' in {{group_names}}"

@@ -1,0 +1,13 @@
+---
+
+  - name: Add nginx repo
+    tags: [yum, repos]
+    copy: >
+      src=nginx.repo
+      dest=/etc/yum.repos.d/nginx.repo
+
+  - name: Install nginx
+    tags: yum
+    yum: name=nginx state=installed
+
+  - name: 
