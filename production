@@ -1,8 +1,19 @@
 [tests]
 10.0.0.48
 
+[wwr-profile-nginx]
+10.0.0.45
+
+[wwr-profile-cassandra]
+10.0.0.46
+
 [wwr-profile]
-10.0.0.[44:46]
+10.0.0.44
+
+[wwr-profile:children]
+wwr-profile-cassandra
+wwr-profile-ngin
+
 
 [adm-servers]
 10.0.0.47

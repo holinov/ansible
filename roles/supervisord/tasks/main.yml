@@ -1,14 +1,4 @@
 ---
-  - name: test
-    tags: [yum, supervisord]
-    copy: >
-      src={{item}}
-      dest=/tmp/{{item}}
-      owner=root
-      mode=0744
-    with_items:
-      - "{{group_name}}"
-
 
   - name: supervisord cobnfigure
     tags: [yum, supervisord]
@@ -33,3 +23,13 @@
       dest=/etc/supervisord.conf
       owner=root
       mode=0744
+
+  - name: Put conf.d file
+    tags: [yum, supervisord]
+    copy: >
+      src={{item}}_web-ballancer.conf
+      dest=/etc/supervisord.d/{{item}}_web-balanser.conf
+      owner=root
+      mode=0744
+    with_items:
+      - "{{group_name}}"
