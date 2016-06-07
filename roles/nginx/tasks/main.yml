@@ -10,4 +10,7 @@
     tags: yum
     yum: name=nginx state=installed
 
-  - name: 
+  - name: Put config and ssl
+    include: "wwr-profile.yml"
+    when: "'wwr-profile' in item"
+    with_items: "{{group_names}}"

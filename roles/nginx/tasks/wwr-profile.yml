@@ -1,0 +1,20 @@
+---
+  - name: Add site config battlemech.pixapi.net
+    copy: >
+      src=nginx/sites/battlemech.pixapi.net.conf
+      dest=/etc/nginx/conf.d/battlemech.pixapi.net.conf
+      owner=root
+      mode=0644
+
+  - name: Copy ssl dir
+    copy: >
+      src=nginx/ssl_source
+      dest=/etc/nginx/ssl_source
+      owner=root
+
+  - name: Create link to ssl
+    file: >
+      src=/etc/nginx/ssl_source
+      dest=/etc/nginx/ssl
+      force=yes
+      
