@@ -1,19 +1,15 @@
 ---
 
 - name: Test group dirs
-  local_action: stat path={{ item }}
+  local_action: stat path={{ item }}/
   register: st
   with_items:
     - "{{ group_names }}"
 
 - debug: msg="{{ st }}"
 
-- debug: msg="{{ item.item }}, {{ item.stat.exists }}"
-  with_items:
-    - "{{st.results}}"
+- name: local test
+  local_action: stat path=wwr-profile/
+  register: local
 
-- name: test
-  debug: msg="{{ item.item }}"
-  when: "{{ item.stat.exists }}"
-  with_items:
-    - "{{st.results}}"
+- debug: "{{ local }}"
