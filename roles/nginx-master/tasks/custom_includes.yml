@@ -1,9 +1,9 @@
 ---
 
 - name: Test group dirs
-  stat: path={{item}}/
+  stat: path={{ item }}/
   register: st
   with_items:
-    - "{{group_names}}"
+    - "{{ group_names }}"
 
-- debug: msg="{{st}}"
+- debug: msg="{{ st }}"
