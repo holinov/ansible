@@ -1,7 +1,7 @@
 ---
 
 - name: Test group dirs
-  stat: path={{ item }}/
+  stat: path={{ item }}
   register: st
   with_items:
     - "{{ group_names }}"
