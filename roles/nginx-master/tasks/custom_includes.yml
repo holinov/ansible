@@ -1,19 +1,9 @@
 ---
 - name: get file stat to be able to perform a check in the following task
-  local_action: stat path=files/nginx/wwr-profile
+  local_action: stat path=files/nginx/{{item}}
   register: file
   ignore_errors: True
-
-- debug: msg="{{file}}"
-
-- name: Test group dirs
-  local_action: stat path={{ item }}/
-  register: st
   with_items:
     - "{{ group_names }}"
 
-- debug: msg="{{ st }}"
-
-- name: local test
-  local_action: stat path=wwr-profile/
-  register: local
+- debug: msg="{{file}}"
