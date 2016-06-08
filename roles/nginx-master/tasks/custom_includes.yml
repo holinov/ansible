@@ -8,7 +8,7 @@
 
 - debug: msg="{{ item.stat }}"
   with_items:
-    - " {{ st.results }}"
+    - st.results
 
 - name: Put files
   copy: >
