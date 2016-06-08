@@ -1,5 +1,5 @@
 ---
-- name: get file stat to be able to perform a check in the following task
+- name: Find group path
   local_action: stat path=files/nginx/{{item}}
   register: file
   ignore_errors: True
@@ -7,3 +7,11 @@
     - "{{ group_names }}"
 
 - debug: msg="{{file}}"
+
+- name: Put group dir to server
+  copy: >
+    src=nginx/sites/file.stat.path
+    dest=/etc/nginx/pix
+    owner=nginx
+    mode=0644
+  when: file.stat.exists
