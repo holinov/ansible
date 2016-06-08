@@ -6,11 +6,10 @@
   with_items:
     - "{{ group_names }}"
 
-- debug: msg="{{ st }}"
-
+- debug: msg="{{ st.item }}, {{ st.stat.exists }}"
 
 - name: Put files
   copy: >
-    src= st.item/
+    src="{{ st.item }}"/
     dest=/etc/nginx/pix
-  when: "st.stat.exists != 'false'"
+  when: "{{ st.stat.exists }} != 'false'"
