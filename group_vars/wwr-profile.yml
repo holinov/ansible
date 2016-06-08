@@ -46,5 +46,3 @@
       user: "centos"
       job: "echo `date` >> ~/file"
       state: "absent"
-
-  nginx_params: !!inc/file tst.yml

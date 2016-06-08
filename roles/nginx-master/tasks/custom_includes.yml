@@ -1,0 +1,9 @@
+---
+
+- name: Test group dirs
+  stat: path={{item}}/
+  register: st
+  with_items:
+    - "{{group_names}}"
+
+- debug: msg="{{st}}"
