@@ -6,9 +6,7 @@
   with_items:
     - "{{ group_names }}"
 
-- debug: msg="{{ st.results }}"
-
-- debug: msg="{{ item }}"
+- debug: msg="{{ item.stat }}"
   with_items:
     - " {{ st.results }}"
 
