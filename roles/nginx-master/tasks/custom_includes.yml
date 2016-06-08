@@ -13,4 +13,4 @@
   copy: >
     src= st.item/
     dest=/etc/nginx/pix
-  when: {{st.stat.exists}} != `false`
+  when: "st.stat.exists != 'false'"
