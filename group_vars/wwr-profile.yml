@@ -47,4 +47,4 @@
       job: "echo `date` >> ~/file"
       state: "absent"
 
-  nginx_params: !include tst.yml
+  nginx_params: !!inc/file tst.yml
