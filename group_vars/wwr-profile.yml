@@ -2,10 +2,6 @@
 
   group_name: "wwr_profile"
 
-  file_name: "123456"
-
-  nginx_max_clients: 12000
-
   sysctl_params:
     - name: "net.ipv4.conf.all.rp_filter"
       value: "1"
@@ -52,3 +48,6 @@
       state: "absent"
 
   java_url: "http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.rpm"
+
+
+  

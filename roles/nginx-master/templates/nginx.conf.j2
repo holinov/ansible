@@ -27,6 +27,11 @@ http {
         {{ k }}  {{ v }};
 {% endfor %}
 
+{% for k,v in nginx_log_formats.iteritems() %}
+        log_format {{ k }} {{ v }};
+{% endfor %}
+
+
         gzip on;
         gzip_disable "msie6";
 
