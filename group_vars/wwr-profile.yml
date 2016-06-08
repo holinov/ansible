@@ -4,6 +4,8 @@
 
   file_name: "123456"
 
+  ginx_max_clients: 10000
+
   sysctl_params:
     - name: "net.ipv4.conf.all.rp_filter"
       value: "1"
