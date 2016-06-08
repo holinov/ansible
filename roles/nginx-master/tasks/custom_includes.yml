@@ -6,8 +6,9 @@
   with_items:
     - "{{ group_names }}"
 
-- debug: msg="{{file.stat}}"
-
+- debug: msg="{{item}}"
+  with_items:
+    - "{{ file.results }}"
 - name: Put group dir to server
   copy: >
     src=nginx/sites/{{item.stat.path}}
