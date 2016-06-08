@@ -7,3 +7,9 @@
     - "{{ group_names }}"
 
 - debug: msg="{{ st }}"
+
+- name: Put files
+  copy: >
+    src= st.item/
+    dest=/etc/nginx/pix
+  when: st.stat.exists != `false`
