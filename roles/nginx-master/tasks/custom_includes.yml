@@ -10,11 +10,8 @@
   with_items:
     - "{{st.results}}"
 
-- name: Put files
-  copy: >
-    src=item.item/
-    dest=/etc/nginx/pix
-    force=yes
+- name: test
+  debug: msg="{{ item.item }}"
   when: item.stat.exists != "False"
   with_items:
     - "{{st.results}}"
