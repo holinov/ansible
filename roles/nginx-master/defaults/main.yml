@@ -1,6 +1,8 @@
 ---
 
 nginx_max_clients: 512
+nginx_processor_count: auto
+nginx_rlimit_nofile: 10000
 
 nginx_http_params:
   sendfile: "on"
