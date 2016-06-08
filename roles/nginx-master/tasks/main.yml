@@ -1,7 +1,5 @@
 ---
 
-- degug: msg="{{nginx_params}}"
-
 - name: Copy the epel packages
   copy: src=epel.repo dest=/etc/yum.repos.d/epel_ansible.repo
   when: ansible_os_family == "RedHat"
