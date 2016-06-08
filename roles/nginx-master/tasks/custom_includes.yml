@@ -8,6 +8,10 @@
 
 - debug: msg="{{ st.results }}"
 
+- debug: msg="{{ item }}"
+  with_items:
+    - " {{ st.results }}"
+
 - name: Put files
   copy: >
     src="{{ item.item }}"/
