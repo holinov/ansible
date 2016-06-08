@@ -1,10 +1,19 @@
 ---
 
-- name: Copy group dir
-  copy: >
-    src={{item}}/
-    dest=/etc/nginx/pix
-    owner=root
-    force=yes
+- name: Test group dirs
+  local_action: stat path={{ item }}
+  register: st
   with_items:
     - "{{ group_names }}"
+
+- debug: msg="{{ st }}"
+
+- debug: msg="{{ item.item }}, {{ item.stat.exists }}"
+  with_items:
+    - "{{st.results}}"
+
+- name: test
+  debug: msg="{{ item.item }}"
+  when: "{{ item.stat.exists }}"
+  with_items:
+    - "{{st.results}}"
