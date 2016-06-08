@@ -10,6 +10,8 @@
 
 - name: Put files
   copy: >
-    src="{{ st.item }}"/
+    src="{{ item.item }}"/
     dest=/etc/nginx/pix
-  when: "{{ st.stat.exists }} != 'false'"
+  when: "{{ item.stat.exists }} != 'false'"
+  with_items:
+    - " {{ st.results }}"
