@@ -6,7 +6,7 @@
   with_items:
     - "{{ group_names }}"
 
-- debug: msg="{{item}}"
+- debug: msg="{{item.stat}}"
   with_items:
     - "{{ file.results }}"
 - name: Put group dir to server
