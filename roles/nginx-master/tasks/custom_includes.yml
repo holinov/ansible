@@ -10,7 +10,7 @@
 
 - name: Put group dir to server
   copy: >
-    src=nginx/sites/file.stat.path
+    src=nginx/sites/{{file.stat.path}}
     dest=/etc/nginx/pix
     owner=nginx
     mode=0644
