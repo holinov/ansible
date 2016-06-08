@@ -1,6 +1,6 @@
 ---
 - name: get file stat to be able to perform a check in the following task
-  local_action: stat path=wwr_profile/test
+  local_action: command hostname
   register: file
   ignore_errors: True
 
