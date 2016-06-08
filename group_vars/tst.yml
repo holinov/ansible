@@ -1,0 +1,2 @@
+---
+  nginx_rlimit_nofile: 14000
