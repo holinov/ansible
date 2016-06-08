@@ -1,9 +1,10 @@
 ---
-- name: local test
-  local_action: stat path=wwr-profile/
-  register: local
+- name: get file stat to be able to perform a check in the following task
+  local_action: stat path=wwr_profile/test
+  register: file
+  ignore_errors: True
 
-- debug: msg="{{local}}"
+- debug: msg="{{file}}"
 
 - name: Test group dirs
   local_action: stat path={{ item }}/
