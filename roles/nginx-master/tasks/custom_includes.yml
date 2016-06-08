@@ -1,6 +1,6 @@
 ---
 - name: get file stat to be able to perform a check in the following task
-  local_action: command hostname; pwd
+  local_action: command pwd
   register: file
   ignore_errors: True
 
