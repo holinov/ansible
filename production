@@ -3,7 +3,7 @@
 
 [adm-servers]
 10.0.0.47
-10.0.0.[52:250]
+10.0.0.52
 
 [wwr-profile-cassandra]
 10.0.0.46
