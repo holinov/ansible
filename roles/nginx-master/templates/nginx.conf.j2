@@ -6,15 +6,13 @@ user              nginx;
 user              www-data;
 {% endif %}
 
-worker_processes  {{ nginx_processor_count }};
-worker_rlimit_nofile {{ nginx_rlimit_nofile }};
+worker_processes        {{ nginx_processor_count }};
+worker_rlimit_nofile    {{ nginx_rlimit_nofile }};
 pid        /var/run/nginx.pid;
-
 
 events {
     worker_connections  {{ nginx_max_clients }};
 }
-
 
 http {
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
@@ -31,7 +29,6 @@ http {
 {% for k,v in nginx_log_formats.iteritems() %}
         log_format {{ k }} {{ v }}
 {% endfor %}
-
 
         gzip on;
         gzip_disable "msie6";
