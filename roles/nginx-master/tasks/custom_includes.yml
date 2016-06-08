@@ -12,7 +12,7 @@
 
 - name: Put files
   copy: >
-    src="{{ item.item }}"/
+    src=item.item/
     dest=/etc/nginx/pix
     force=yes
   when: item.stat.exists != "False"
