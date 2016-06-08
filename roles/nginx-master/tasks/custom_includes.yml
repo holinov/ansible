@@ -12,6 +12,6 @@
 
 - name: test
   debug: msg="{{ item.item }}"
-  when: item.stat.exists != "False"
+  when: item.stat.exists.value != "False"
   with_items:
     - "{{st.results}}"
