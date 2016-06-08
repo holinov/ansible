@@ -6,7 +6,7 @@
   with_items:
     - "{{ group_names }}"
 
-- debug: msg="{{ st.item }}, {{ st.stat }}"
+- debug: msg="{{ st }}"
 
 - name: Put files
   copy: >
