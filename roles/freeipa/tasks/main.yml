@@ -5,8 +5,16 @@
   register: ipa_install
 
 - name: Debug install
-  debug: msg="{{ipa_install}}"
+  debug: msg="{{ipa_role}}###########\n{{ipa_install}}"
 
 - name: Config ipa-client
-  debug: msg="Changed"
-  when: ipa_install.changed
+  shell: >
+      ipa-client-install
+      --mkhomedir -f
+      -p admin@pix.lan
+      -w P@ssw0rD
+      --domain="{{ freeipa_domain }}"
+      --realm="{{ freeipa_domain }}
+      --server="{{ freeipa_server }}"
+      --hostname="{{ ansible_fqdn }}"
+  when: (ipa_install.changed) and (ipa_role == "client")

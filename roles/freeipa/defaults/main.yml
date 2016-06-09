@@ -1,0 +1,4 @@
+---
+
+freeipa_domain: PIX.LAN
+freeipa_server: freeipa-master.pix.lan
