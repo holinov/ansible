@@ -5,14 +5,14 @@
   when: ipa_role == "client"
   register: ipa_install
 
-- shell: >
+- name: Configure ipa client
+  shell: >
      ipa-client-install
-     --mkhomedir -f
+     --mkhomedir -f -U
      -p admin@pix.lan
      -w P@ssw0rD
      --domain={{ freeipa_domain }}
      --realm={{ freeipa_domain }}
      --server={{ freeipa_server }}
-     --hostname={{ ansible_fqdn }}
-
+     --hostname={{ ansible_fqdn }}.pix.lan
   when: ipa_install.changed
