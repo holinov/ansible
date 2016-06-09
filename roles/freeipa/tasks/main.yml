@@ -20,4 +20,4 @@
      --realm={{ freeipa_domain }}
      --server={{ freeipa_server }}
      --hostname={{ ansible_fqdn }}.pix.lan
-  when: ipa_install.change
+  when: ipa_install.changed
