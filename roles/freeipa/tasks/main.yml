@@ -6,13 +6,13 @@
   register: ipa_install
 
 - shell: >
-    "ipa-client-install
+     ipa-client-install
      --mkhomedir -f
      -p admin@pix.lan
      -w P@ssw0rD
      --domain={{ freeipa_domain }}
      --realm={{ freeipa_domain }}
      --server={{ freeipa_server }}
-     --hostname={{ ansible_fqdn }}"
-     
+     --hostname={{ ansible_fqdn }}
+
   when: ipa_install.changed
