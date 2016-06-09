@@ -6,6 +6,9 @@
   register: ipa_install
 
 - shell: whoami
+  register: usr
+
+- debug: msg="{{ usr }}"
 
 - name: Configure ipa client
   shell: >
