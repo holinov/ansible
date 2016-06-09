@@ -13,7 +13,7 @@
 - name: Configure ipa client
   shell: >
      ipa-client-install
-     --mkhomedir  -U
+     --mkhomedir -U
      -p admin@{{ freeipa_domain }}
      -w P@ssw0rD
      --domain={{ freeipa_domain }}
