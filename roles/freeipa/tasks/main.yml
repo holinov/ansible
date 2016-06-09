@@ -5,9 +5,6 @@
   when: ipa_role == "client"
   register: ipa_install
 
-- name: Debug install
-  debug: msg="{{ipa_role}}###########\n{{ipa_install}}"
-
 - name: Config ipa client
   shell: >
       ipa-client-install
