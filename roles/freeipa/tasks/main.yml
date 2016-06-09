@@ -1,0 +1,8 @@
+---
+- name: install ipa client
+  yum: name=ipa-client state=installed
+  when: ipa_role == "client"
+  register: ipa_install
+
+- name: Debug install
+  debug: msg="{{ipa_install}}"

@@ -1,0 +1,11 @@
+---
+
+- name: Ipa test
+  hosts:
+    - 10.0.0.44
+  gather_facts: yes
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  roles:
+    - freeipa

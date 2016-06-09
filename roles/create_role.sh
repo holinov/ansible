@@ -17,7 +17,7 @@ if [ -e "$role_path" ]
 fi
 
 echo "Create role: $role"
-mkdir -p $role_path/{files,handlers,meta,templates,tasks,vars}
+mkdir -p $role_path/{defaults,files,handlers,meta,templates,tasks,vars}
 cd $role_path
-touch handlers/main.yml meta/main.yml vars/main.yml tasks/main.yml
+touch handlers/main.yml meta/main.yml vars/main.yml tasks/main.yml defaults/main.yml
 echo "Role created"

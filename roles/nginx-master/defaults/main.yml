@@ -31,7 +31,7 @@ nginx_log_formats:
 
 nginx_sites:
  - server:
-    file_name: one
+    :wfile_name: one
     listen: 8080
     server_name: localhost
     root: "/tmp/site1"
