@@ -1,8 +1,6 @@
 ---
   - name: Degug group
-    debug: msg="{{ item }}"
-    with_items:
-      - "{{ groups['adm-servers'] }}"
+    debug: msg="{{ groups[group_name]  }}"
 
   - name: iptables config
     tags: iptables
