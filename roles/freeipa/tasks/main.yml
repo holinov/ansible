@@ -14,8 +14,8 @@
   shell: >
      sudo
      ipa-client-install
-     --mkhomedir -f -U
-     -p admin@pix.lan
+     --mkhomedir  -U
+     -p admin@{{ freeipa_domain }}
      -w P@ssw0rD
      --domain={{ freeipa_domain }}
      --realm={{ freeipa_domain }}
