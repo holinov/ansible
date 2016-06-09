@@ -5,8 +5,7 @@
   when: ipa_role == "client"
   register: ipa_install
 
-- name: Config ipa client
-  shell: >
+- shell: >
       ipa-client-install
       --mkhomedir -f
       -p admin@pix.lan
