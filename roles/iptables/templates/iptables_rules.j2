@@ -8,7 +8,7 @@
 {% for host in groups[group_name] %}
 -A INPUT -s {{ hostvars[host]['ansible_default_ipv4']['address'] }}/32 -j ACCEPT
 {% endfor %}
-{% for host in groups["adm-servers"] %}
+{% for host in groups['adm-servers'] %}
 -A INPUT -s {{ hostvars[host]['ansible_default_ipv4']['address'] }}/32 -j ACCEPT
 {% endfor %}
 {% for ip in office_ips %}
