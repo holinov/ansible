@@ -1,2 +1,2 @@
 ---
-dependencies: [common, iptabless]
+dependencies: [common, iptables]
