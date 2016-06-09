@@ -1,5 +1,9 @@
 ---
-
+- name: Loads to facts
+  hosts:
+    - adm-servers
+  gather_facts: yes
+  tasks: []
 - name: Ipa test
   hosts:
     - all
