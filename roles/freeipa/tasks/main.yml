@@ -5,6 +5,8 @@
   when: ipa_role == "client"
   register: ipa_install
 
+- shell: whoami
+
 - name: Configure ipa client
   shell: >
      sudo
