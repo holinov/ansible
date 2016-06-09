@@ -1,11 +1,11 @@
 ---
 
-- name: Ipa test
+- name: Ilya
   hosts:
-    - all
+    - iliya
   gather_facts: yes
   remote_user: centos
   become: yes
   become_method: sudo
   roles:
-    - freeipa
+    - java

@@ -1,0 +1,15 @@
+---
+- name: Loads to facts
+  hosts:
+    - adm-servers
+  gather_facts: yes
+  tasks: []
+- name: apply common configuration
+  hosts:
+    - wwr-profile
+  gather_facts: yes
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  roles:
+   - nginx-master

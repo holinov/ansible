@@ -12,7 +12,6 @@
 
 - name: Configure ipa client
   shell: >
-     sudo
      ipa-client-install
      --mkhomedir  -U
      -p admin@{{ freeipa_domain }}
@@ -21,4 +20,4 @@
      --realm={{ freeipa_domain }}
      --server={{ freeipa_server }}
      --hostname={{ ansible_fqdn }}.pix.lan
-  when: ipa_install.changed
+  when: ipa_install.change
