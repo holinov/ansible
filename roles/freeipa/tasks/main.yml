@@ -1,4 +1,5 @@
 ---
+
 - name: install ipa client
   yum: name=ipa-client state=installed
   when: ipa_role == "client"
@@ -7,7 +8,7 @@
 - name: Debug install
   debug: msg="{{ipa_role}}###########\n{{ipa_install}}"
 
-- name: Config ipa-client
+- name: Config ipa client
   shell: >
       ipa-client-install
       --mkhomedir -f
@@ -17,4 +18,4 @@
       --realm="{{ freeipa_domain }}
       --server="{{ freeipa_server }}"
       --hostname="{{ ansible_fqdn }}"
-  when: (ipa_install.changed) and (ipa_role == "client")
+  when: ipa_install.changed
