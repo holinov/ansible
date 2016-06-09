@@ -31,14 +31,14 @@ nginx_log_formats:
 
 nginx_sites:
  - server:
-    file_name: foo
+    file_name: one
     listen: 8080
     server_name: localhost
     root: "/tmp/site1"
     location1: {name: /, try_files: "$uri $uri/ /index.html"}
     location2: {name: /images/, try_files: "$uri $uri/ /index.html"}
  - server:
-    file_name: bar
+    file_name: one
     listen: 9090
     server_name: ansible
     root: "/tmp/site2"
