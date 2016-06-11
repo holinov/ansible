@@ -1,0 +1,12 @@
+---
+
+- name: Ilya
+  hosts:
+    - game
+  gather_facts: yes
+  remote_user: root
+  become: yes
+  become_method: sudo
+  roles:
+    - java
+    - gol_profile

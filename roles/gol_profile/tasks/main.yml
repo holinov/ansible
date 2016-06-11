@@ -1,0 +1,4 @@
+---
+
+- name: Trace gol install
+  command: echo 123 
