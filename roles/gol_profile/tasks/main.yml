@@ -3,11 +3,11 @@
 - name: install git
   yum: name=git state=latest
 
-- name: install ru.ugw.bioformer.server.tes.thrift
-  yum: name=ru.ugw.bioformer.server.tes.thrift state=latest
+- name: install thrift
+  yum: name=thrift state=latest
 
-- name: make ru.ugw.bioformer.server.tes.thrift symlink
-  file: src=/usr/bin/ru.ugw.bioformer.server.tes.thrift dest=/usr/local/bin/ru.ugw.bioformer.server.tes.thrift state=link
+- name: make thrift symlink
+  file: src=/usr/bin/thrift dest=/usr/local/bin/thrift state=link
 
 - name: install maven
   yum: name=maven state=latest
@@ -27,8 +27,8 @@
     force: yes
     accept_hostkey: yes
 
-- name: build maven project
-  command: mvn clean install -Pdev
+- name: build maven project with profiles '{{ profile_mvn_profiles }}'
+  command: "mvn clean install -P{{ profile_mvn_profiles }}"
   args:
     chdir: '{{ profile_work }}'
 
