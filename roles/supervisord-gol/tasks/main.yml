@@ -1,0 +1,35 @@
+---
+
+  - name: supervisord cobnfigure
+    tags: [yum, supervisord]
+    yum: name=supervisor state=installed
+
+  - name: Enable service supervisord
+    tags: [service, supervisord]
+    service: name=supervisord enabled=yes
+
+  - name: Put init.d file
+    tags: [supervisord, file]
+    copy: >
+     src=supervisord
+     dest=/etc/init.d/supervisord
+     owner=root
+     mode=0744
+
+  - name: Put conf file
+    tags: [supervisord, file]
+    copy: >
+      src=supervisord.conf
+      dest=/etc/supervisord.conf
+      owner=root
+      mode=0744
+
+  - name: Put conf.d file
+    tags: [yum, supervisord]
+    copy: >
+      src={{item}}.conf
+      dest=/etc/supervisord.d/{{item}}.conf
+      owner=root
+      mode=0744
+    with_items:
+      - "gol_profile_server"

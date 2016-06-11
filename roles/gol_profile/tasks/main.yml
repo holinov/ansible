@@ -1,26 +1,36 @@
 ---
 
-- name: install the latest version of git
+- name: install git
   yum: name=git state=latest
 
-- name: install the latest version of maven
+- name: install thrift
+  yum: name=thrift state=latest
+
+- name: make thrift symlink
+  file: src=/usr/bin/thrift dest=/usr/local/bin/thrift state=link
+
+- name: install maven
   yum: name=maven state=latest
 
-- name: Enshure work directories
+- name: enshure work directories
   file: path='{{ profile_work }}' state=directory
 
-- name: Enshure dest directories
+- name: enshure dest directories
   file: path='{{ profile_dest }}' state=directory
 
-- name: Checkout GIT repository '{{ profile_server_repo }}' branch '{{ profile_server_branch }}' to '{{ profile_work }}'
+- name: checkout GIT repository '{{ profile_server_repo }}' branch '{{ profile_server_branch }}' to '{{ profile_work }}'
   git:
     repo: '{{ profile_server_repo }}'
     dest: '{{ profile_work }}'
     version: '{{ profile_server_branch }}'
-    accept_hostkey: yes
     update: yes
+    force: yes
+    accept_hostkey: yes
 
-- name: Build maven project
+- name: build maven project
   command: mvn clean install -Pdev
   args:
     chdir: '{{ profile_work }}'
+
+- name: copy jar to '{{ profile_dest }}'
+  command: cp '{{ profile_work }}/server-common/target/server-common-1.0.2-SNAPSHOT-jar-with-dependencies.jar' '{{ profile_dest }}/server-common-1.0.2-SNAPSHOT-jar-with-dependencies.jar'

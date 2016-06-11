@@ -9,4 +9,5 @@
   become_method: sudo
   roles:
     #- java
+    - supervisord-gol
     - gol_profile
