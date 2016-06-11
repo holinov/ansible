@@ -1,6 +1,6 @@
 ---
 
-- name: Ilya
+- name: Bioformer Profile server
   hosts:
     - game
   gather_facts: yes
