@@ -8,5 +8,5 @@
   become: yes
   become_method: sudo
   roles:
-    - java
+    #- java
     - gol_profile

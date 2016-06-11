@@ -1,0 +1,8 @@
+---
+
+profile_server_repo: git@bitbucket.org:unlimitedgameworks/gol-server.git
+profile_server_branch: develop
+
+profile_dest: /opt/gol/profile.server
+profile_work: /tmp/profile.server
+

@@ -1,4 +1,25 @@
 ---
 
-- name: Trace gol install
-  command: echo 123 
+- name: install the latest version of git
+  yum: name=git state=latest
+
+- name: install the latest version of maven
+  yum: name=maven state=latest
+
+- name: Enshure work directories
+  file: path='{{ profile_work }}' state=directory
+
+- name: Enshure dest directories
+  file: path='{{ profile_dest }}' state=directory
+
+- name: Checkout GIT repository '{{ profile_server_repo }}' branch '{{ profile_server_branch }}' to '{{ profile_work }}'
+  git:
+    repo: '{{ profile_server_repo }}'
+    dest: '{{ profile_work }}'
+    version: '{{ profile_server_branch }}'
+    accept_hostkey: yes
+
+- name: Build maven project
+  command: mvn clean install -Pdev
+  args:
+    chdir: '{{ profile_work }}'
