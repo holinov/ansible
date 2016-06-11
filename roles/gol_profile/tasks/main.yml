@@ -18,6 +18,7 @@
     dest: '{{ profile_work }}'
     version: '{{ profile_server_branch }}'
     accept_hostkey: yes
+    update: yes
 
 - name: Build maven project
   command: mvn clean install -Pdev
