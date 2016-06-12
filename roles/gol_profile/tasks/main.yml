@@ -34,3 +34,5 @@
 
 - name: copy jar to '{{ profile_dest }}'
   command: cp '{{ profile_work }}/server-common/target/server-common-1.0.2-SNAPSHOT-jar-with-dependencies.jar' '{{ profile_dest }}/server-common-1.0.2-SNAPSHOT-jar-with-dependencies.jar'
+  notify:
+    - restart profile server

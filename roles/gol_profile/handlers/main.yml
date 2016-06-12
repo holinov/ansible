@@ -1,0 +1,4 @@
+---
+
+- name: restart profile server
+  command: supervisorctl restart profile-server
