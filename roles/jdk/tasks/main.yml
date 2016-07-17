@@ -1,0 +1,25 @@
+---
+
+- name: enshure java directories
+  file: path=/opt/java state=directory
+
+- name: download Sun Java JDK
+  get_url:
+    url: http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.tar.gz
+    headers: "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie"
+    dest: /opt/java
+
+- name: unpack JDK
+  unarchive:
+    src: /opt/java/jdk-8u91-linux-x64.tar.gz
+    copy: no
+    dest: /opt/java
+
+- name: Select java version
+  alternatives: name=java path=/opt/java/jdk1.8.0_91/bin/java link=/usr/bin/java
+
+- name: Select jar version
+  alternatives: name=jar path=/opt/java/jdk1.8.0_91/bin/jar link=/usr/bin/jar
+
+- name: Select javac version
+  alternatives: name=javac path=/opt/java/jdk1.8.0_91/bin/java link=/usr/bin/javac

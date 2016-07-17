@@ -28,6 +28,11 @@
     accept_hostkey: yes
     recursive: yes
 
+- name: run thrift compiler
+  command: /bin/bash thrift.sh
+  args:
+    chdir: '{{ profile_work }}/commons/thrift'
+
 - name: build maven project with profiles '{{ profile_mvn_profiles }}'
   command: "mvn clean install -P{{ profile_mvn_profiles }}"
   args:

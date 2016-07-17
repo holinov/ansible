@@ -1,8 +1,8 @@
 ---
 
-- name: Add resolv.conf
-  tags: [dns, common]
-  copy: src=resolv.conf dest=/etc/resolv.conf owner=root group=root mode=0644
+#- name: Add resolv.conf
+#  tags: [dns, common]
+#  copy: src=resolv.conf dest=/etc/resolv.conf owner=root group=root mode=0644
 
 - include: CentOS6-repos.yml
   tags: yum
@@ -16,20 +16,24 @@
   tags: yum
   yum: name={{ item }} state=installed
   with_items: "{{ def_pkgs }}"
+  when: def_pkgs is defined
+
 
 - name: Add admins ssh keys
   tags: keys
   authorized_key: user=root key="{{ item }}"
   with_items:  "{{ admins_keys }}"
+  when: admins_keys is defined
 
 - name: Revoke admins ssh keys
   tags: keys
   authorized_key: user=root key="{{ item }}" state=absent
   with_items:  "{{ revoke_keys }}"
+  when: revoke_keys is defined
 
-- name: Update root passwd
-  tags: passwd
-  user: name=root password="{{ root_passwd }}" update_password=always
+#- name: Update root passwd
+#  tags: passwd
+#  user: name=root password="{{ root_passwd }}" update_password=always
 
 - name: Add ntp config
   template: src=ntp.j2 dest=/etc/ntp.conf
@@ -37,15 +41,15 @@
   notify:
     - restart ntpd
 
-- name: SSH config
-  tags: ssh-config
-  template: src=sshd_config.j2 dest=/etc/ssh/sshd_config owner=root mode=0600
-  notify:
-    - restart sshd
+#- name: SSH config
+#  tags: ssh-config
+#  template: src=sshd_config.j2 dest=/etc/ssh/sshd_config owner=root mode=0600
+#  notify:
+#    - restart sshd
 
-- name: Selinud disable
-  tags: selinux
-  selinux: state=disabled
-  notify:
-    - Restart server
-    - Wait for server to restart
+#- name: Selinud disable
+#  tags: selinux
+#  selinux: state=disabled
+#  notify:
+#    - Restart server
+#    - Wait for server to restart
