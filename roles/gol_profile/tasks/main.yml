@@ -34,7 +34,7 @@
     chdir: '{{ profile_work }}/commons/thrift'
 
 - name: build maven project with profiles '{{ profile_mvn_profiles }}'
-  command: "mvn clean install -P{{ profile_mvn_profiles }}"
+  command: "mvn clean install -P{{ profile_mvn_profiles }} -Dmaven.test.skip=true"
   args:
     chdir: '{{ profile_work }}'
 
