@@ -8,7 +8,7 @@
   become: yes
   become_method: sudo
   roles:
-    - jdk
     - common
+    - jdk
     - supervisord-gol
     - gol_profile

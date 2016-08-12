@@ -25,15 +25,15 @@
   with_items:  "{{ admins_keys }}"
   when: admins_keys is defined
 
-- name: Revoke admins ssh keys
-  tags: keys
-  authorized_key: user=root key="{{ item }}" state=absent
-  with_items:  "{{ revoke_keys }}"
-  when: revoke_keys is defined
+#- name: Revoke admins ssh keys
+#  tags: keys
+#  authorized_key: user=root key="{{ item }}" state=absent
+#  with_items:  "{{ revoke_keys }}"
+#  when: revoke_keys is defined
 
-#- name: Update root passwd
-#  tags: passwd
-#  user: name=root password="{{ root_passwd }}" update_password=always
+- name: Update root passwd
+  tags: passwd
+  user: name=root password="{{ root_passwd }}" update_password=always
 
 - name: Add ntp config
   template: src=ntp.j2 dest=/etc/ntp.conf
