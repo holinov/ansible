@@ -1,8 +1,8 @@
 ---
 
 profile_server_repo: git@bitbucket.org:unlimitedgameworks/gol-server.git
-#profile_server_branch: develop
-profile_server_branch: bug/GG-23-templateId
+profile_server_branch: develop
+#profile_server_branch: bug/GG-23-templateId
 
 profile_dest: /opt/gol/profile.server
 profile_work: /tmp/profile1.server
